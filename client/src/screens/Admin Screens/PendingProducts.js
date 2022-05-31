@@ -15,21 +15,20 @@ const PendingProducts = () => {
   }, []);
 
   const approvedProduct = async (id) => {
-    let approveProduct = confirm("Are you sure you want to approve?");
-    if (approveProduct === true) {
-      alert("Product Successfully Approved");
-      await axios.put(`http://localhost:5000/admin/pendingproducts/${id}`);
-      window.location.reload();
-    }
+    // let approveProduct = confirm("Are you sure you want to approve?");
+    // if (approveProduct === true) {
+    //   alert("Product Successfully Approved");
+    //   await axios.put(`http://localhost:5000/admin/pendingproducts/${id}`);
+    //   window.location.reload();
+    // }
   };
 
   const deleteProduct = async (id) => {
-    let deleteProduct = confirm("Are you sure you want to delete?");
-    if (deleteProduct === true) {
-      await axios.delete(`http://localhost:5000/admin/pendingproducts/${id}`);
-
-      window.location.reload();
-    }
+    // let deleteProduct = confirm("Are you sure you want to delete?");
+    // if (deleteProduct === true) {
+    //   await axios.delete(`http://localhost:5000/admin/pendingproducts/${id}`);
+    //   window.location.reload();
+    // }
   };
   return (
     <Container className="mt-4">
