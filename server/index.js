@@ -11,7 +11,7 @@ app.use(morgan("tiny"));
 app.use("/farmer", require("./routes/FarmerDetails"));
 app.use("/customer", require("./routes/CustomerDetails"));
 app.use("/admin", require("./routes/Admin"));
-app.use("/", require("./routes/Home"));
+app.use("/home", require("./routes/Home"));
 
 app.get("/api", (req, res) => {
   res.send("Api is running");

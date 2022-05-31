@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../database/db");
 
 //get details to show in home
-router.get("/", (req, res) => {
+router.get("/allproducts", (req, res) => {
   db.query(
     "SELECT p.id, p.product_name, p.product_price, p.product_description, p.product_image, f.name FROM add_product p JOIN farmer_details f on f.farmer_email=p.farmer_email WHERE product_status = 'approved' AND product_hidden_status = 'view'",
 
