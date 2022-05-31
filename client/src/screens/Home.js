@@ -13,7 +13,7 @@ const HomeScreen = () => {
 
   useEffect(async () => {
     await axios
-      .get(`http://localhost:5000/home/allproducts`)
+      .get(`https://farmersfriends.herokuapp.com/home/allproducts`)
       .then((response) => {
         setProduct(response.data);
       });
