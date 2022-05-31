@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   // host: "localhost",
   // user: "root",
   // password: "admin123",
@@ -10,11 +10,11 @@ const db = mysql.createConnection({
   password: "99e4f13d",
   database: "heroku_2f3a5afed2151cd",
 });
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log("MySql Database is Connected");
-});
+// db.connect((err) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("MySql Database is Connected");
+// });
 
 module.exports = db;
