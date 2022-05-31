@@ -1,0 +1,7 @@
+main {
+  min-height: 80vh;
+}
+table {
+  font-size: 13px;
+  table-layout: fixed;
+}
