@@ -17,9 +17,12 @@ const ProductList = () => {
   const [productDetails, setProductDetails] = useState([]);
 
   useEffect(async () => {
-    await Axios.post("http://localhost:5000/farmer/productlist", {
-      farmerEmail: localStorage.getItem("farmerEmail"),
-    }).then((response) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/farmer/productlist",
+      {
+        farmerEmail: localStorage.getItem("farmerEmail"),
+      }
+    ).then((response) => {
       setProductDetails(response.data);
     });
   }, []);
@@ -27,14 +30,14 @@ const ProductList = () => {
   //button to display product
   const productView = async (id) => {
     alert("Product Successfully Set to View!");
-    await axios.put(`http://localhost:5000/farmer/view/${id}`);
+    await axios.put(`https://farmersfriends.herokuapp.com/farmer/view/${id}`);
     window.location.reload();
   };
 
   //button to hide product
   const productHidden = async (id) => {
     alert("Product Successfully Set to Hidden!");
-    await axios.put(`http://localhost:5000/farmer/hidden/${id}`);
+    await axios.put(`https://farmersfriends.herokuapp.com/farmer/hidden/${id}`);
     window.location.reload();
   };
 

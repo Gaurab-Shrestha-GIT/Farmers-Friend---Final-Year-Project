@@ -14,9 +14,12 @@ const CustomerProfile = () => {
   const [message, setMessage] = useState("");
 
   useEffect(async () => {
-    await Axios.post("http://localhost:5000/customer/customerprofile", {
-      customerEmail: localStorage.getItem("customerEmail"),
-    }).then((response) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/customer/customerprofile",
+      {
+        customerEmail: localStorage.getItem("customerEmail"),
+      }
+    ).then((response) => {
       setCustomerDetails(response.data);
       setCustomerName(response.data[0].customer_name);
       setAddress(response.data[0].address);
@@ -25,7 +28,7 @@ const CustomerProfile = () => {
   }, []);
 
   const update = () => {
-    Axios.put("http://localhost:5000/customer/customerprofile", {
+    Axios.put("https://farmersfriends.herokuapp.com/customer/customerprofile", {
       customerEmail: localStorage.getItem("customerEmail"),
       updatedName: customerName,
       updatedAddress: address,
@@ -33,7 +36,7 @@ const CustomerProfile = () => {
       updatedPhoneNumber: phoneNumber,
     }).then((response) => {
       if (response.data.update) {
-        alert("Detals Successfully Updated!");
+        alert("Details Successfully Updated!");
         window.location.reload();
       } else {
         setMessage(response.data.message);

@@ -21,10 +21,9 @@ const CustomerLogin = () => {
       }
     ).then((response) => {
       if (response.data.customerLoggedIn) {
-        // localStorage.setItem("customerLoggedIn", true);
-        // localStorage.setItem("customerEmail", response.data.customerEmail);
-        // navigate("/home");
-        alert("HELLO");
+        localStorage.setItem("customerLoggedIn", true);
+        localStorage.setItem("customerEmail", response.data.customerEmail);
+        navigate("/");
       } else {
         setMessage(response.data.message);
       }

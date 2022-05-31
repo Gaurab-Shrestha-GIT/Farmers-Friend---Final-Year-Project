@@ -14,7 +14,7 @@ const AdminLogin = () => {
 
   //login button
   const login = async () => {
-    await Axios.post("http://localhost:5000/admin/adminlogin", {
+    await Axios.post("https://farmersfriends.herokuapp.com/admin/adminlogin", {
       adminEmail: adminEmail,
       adminPassword: adminPassword,
     }).then((response) => {

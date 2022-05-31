@@ -15,14 +15,17 @@ const FarmerSignUp = () => {
   const [message, setMessage] = useState("");
 
   const registerFarmer = async () => {
-    await Axios.post("http://localhost:5000/farmer/registerFarmer", {
-      farmerName: farmerName,
-      farmerAddress: farmerAddress,
-      farmerEmail: farmerEmail,
-      farmerPhoneNumber: farmerPhoneNumber,
-      farmerPassword: farmerPassword,
-      farmerPasswordConfirm: farmerPasswordConfirm,
-    }).then((res) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/farmer/registerFarmer",
+      {
+        farmerName: farmerName,
+        farmerAddress: farmerAddress,
+        farmerEmail: farmerEmail,
+        farmerPhoneNumber: farmerPhoneNumber,
+        farmerPassword: farmerPassword,
+        farmerPasswordConfirm: farmerPasswordConfirm,
+      }
+    ).then((res) => {
       if (res.data.register) {
         setMessage(res.data.message);
       } else {

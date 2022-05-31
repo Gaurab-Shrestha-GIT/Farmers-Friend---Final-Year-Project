@@ -15,7 +15,7 @@ const CustomersDetails = () => {
 
   useEffect(async () => {
     await axios
-      .get("http://localhost:5000/admin/customerdetails")
+      .get("https://farmersfriends.herokuapp.com/admin/customerdetails")
       .then((response) => {
         setCustomerDetails(response.data);
       });

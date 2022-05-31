@@ -13,10 +13,13 @@ const FarmerLogin = () => {
   let navigate = useNavigate();
 
   const login = async () => {
-    await Axios.post("http://localhost:5000/farmer/farmerlogin", {
-      farmerEmail: farmerEmail,
-      password: password,
-    }).then((response) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/farmer/farmerlogin",
+      {
+        farmerEmail: farmerEmail,
+        password: password,
+      }
+    ).then((response) => {
       if (response.data.farmerLoggedIn) {
         localStorage.setItem("farmerLoggedIn", true);
         localStorage.setItem("farmerEmail", response.data.farmerEmail);

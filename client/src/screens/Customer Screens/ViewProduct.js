@@ -22,7 +22,7 @@ const ViewProduct = () => {
     const customer_email = localStorage.getItem("customerEmail");
 
     await axios
-      .post(`http://localhost:5000/customer/placeorder/${id}`, {
+      .post(`https://farmersfriends.herokuapp.com/customer/placeorder/${id}`, {
         orderID: "O" + customer_email + productDetails[0].id + Date.now(),
         productName: productDetails[0].product_name,
         farmerEmail: productDetails[0].farmer_email,
@@ -61,7 +61,7 @@ const ViewProduct = () => {
 
   const submitReview = async () => {
     await axios
-      .post(`http://localhost:5000/customer/${id}/reviews`, {
+      .post(`https://farmersfriends.herokuapp.com/customer/${id}/reviews`, {
         review: review,
         customerEmail: localStorage.getItem("customerEmail"),
         rating: Number(rating),

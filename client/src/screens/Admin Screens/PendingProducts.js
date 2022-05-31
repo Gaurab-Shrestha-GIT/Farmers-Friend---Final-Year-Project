@@ -8,7 +8,7 @@ const PendingProducts = () => {
 
   useEffect(async () => {
     await axios
-      .get("http://localhost:5000/admin/pendingproducts")
+      .get("https://farmersfriends.herokuapp.com/admin/pendingproducts")
       .then((response) => {
         setPendingProducts(response.data);
       });

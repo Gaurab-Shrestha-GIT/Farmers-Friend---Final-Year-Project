@@ -19,7 +19,7 @@ const UpdateProduct = () => {
 
   useEffect(async () => {
     await axios
-      .get(`http://localhost:5000/farmer/updateproduct/${id}`)
+      .get(`https://farmersfriends.herokuapp.com/farmer/updateproduct/${id}`)
       .then((response) => {
         setProductName(response.data[0].product_name);
         setProductPrice(response.data[0].product_price);
@@ -30,7 +30,7 @@ const UpdateProduct = () => {
 
   const update = async () => {
     await axios
-      .put(`http://localhost:5000/farmer/updateproduct/${id}`, {
+      .put(`https://farmersfriends.herokuapp.com/farmer/updateproduct/${id}`, {
         updatedProductName: productName,
         updatedProductPrice: productPrice,
         updatedProductDescription: productDescription,

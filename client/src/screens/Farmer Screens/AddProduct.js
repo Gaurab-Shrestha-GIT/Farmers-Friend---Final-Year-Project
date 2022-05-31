@@ -27,7 +27,7 @@ const AddProduct = () => {
       const filename = response.data.public_id;
 
       //post new product
-      Axios.post("http://localhost:5000/farmer/addproduct", {
+      Axios.post("https://farmersfriends.herokuapp.com/farmer/addproduct", {
         productName: productName,
         productPrice: productPrice,
         productImage: filename,

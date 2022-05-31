@@ -243,10 +243,9 @@ router.put("/farmerdashboard", async (req, res) => {
         if (err) {
           console.log(err);
         } else {
-          // res.send(result);
           return res.json({
             update: true,
-            message: "Details Successfully Updated",
+            // message: "Details Successfully Updated",
           });
         }
       }

@@ -16,9 +16,12 @@ const FarmerDashboard = () => {
   const [message, setMessage] = useState("");
 
   useEffect(async () => {
-    await Axios.post("http://localhost:5000/farmer/farmerdashboard", {
-      farmerEmail: localStorage.getItem("farmerEmail"),
-    }).then((response) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/farmer/farmerdashboard",
+      {
+        farmerEmail: localStorage.getItem("farmerEmail"),
+      }
+    ).then((response) => {
       setFarmerDetails(response.data);
       setName(response.data[0].name);
       setAddress(response.data[0].address);
@@ -27,7 +30,7 @@ const FarmerDashboard = () => {
   }, []);
 
   const update = () => {
-    Axios.put("http://localhost:5000/farmer/farmerdashboard", {
+    Axios.put("https://farmersfriends.herokuapp.com/farmer/farmerdashboard", {
       farmerEmail: localStorage.getItem("farmerEmail"),
       updatedName: name,
       updatedAddress: address,
@@ -35,7 +38,8 @@ const FarmerDashboard = () => {
       updatedPhoneNumber: phoneNumber,
     }).then((response) => {
       if (response.data.update) {
-        setMessage(response.data.message);
+        alert("Details Successfully Updated!");
+        window.location.reload();
       } else {
         setMessage(response.data.message);
       }

@@ -7,7 +7,7 @@ const FarmerOrders = () => {
   const [productDetails, setProductDetails] = useState([]);
   useEffect(async () => {
     await axios
-      .post("http://localhost:5000/farmer/farmerorders", {
+      .post("https://farmersfriends.herokuapp.com/farmer/farmerorders", {
         farmerEmail: localStorage.getItem("farmerEmail"),
       })
       .then((response) => {
@@ -18,7 +18,9 @@ const FarmerOrders = () => {
   const deliveryButton = async (order_id) => {
     // alert(order_id);
     alert("Product Successfully Delivered");
-    await axios.put(`http://localhost:5000/farmer/farmerorders/${order_id}`);
+    await axios.put(
+      `https://farmersfriends.herokuapp.com/farmer/farmerorders/${order_id}`
+    );
     window.location.reload();
   };
 

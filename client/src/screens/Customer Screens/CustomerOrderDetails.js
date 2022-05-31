@@ -7,7 +7,7 @@ const CustomerOrderDetails = () => {
   const [productDetails, setProductDetails] = useState([]);
   useEffect(async () => {
     await axios
-      .post("http://localhost:5000/customer/customerorders", {
+      .post("https://farmersfriends.herokuapp.com/customer/customerorders", {
         customerEmail: localStorage.getItem("customerEmail"),
       })
       .then((response) => {
