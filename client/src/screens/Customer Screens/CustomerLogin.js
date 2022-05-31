@@ -13,14 +13,18 @@ const CustomerLogin = () => {
   let navigate = useNavigate();
 
   const logincustomer = async () => {
-    await Axios.post("http://localhost:5000/customer/customerlogin", {
-      customerEmail: customerEmail,
-      password: password,
-    }).then((response) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/customer/customerlogin",
+      {
+        customerEmail: customerEmail,
+        password: password,
+      }
+    ).then((response) => {
       if (response.data.customerLoggedIn) {
-        localStorage.setItem("customerLoggedIn", true);
-        localStorage.setItem("customerEmail", response.data.customerEmail);
-        navigate("/");
+        // localStorage.setItem("customerLoggedIn", true);
+        // localStorage.setItem("customerEmail", response.data.customerEmail);
+        // navigate("/home");
+        alert("HELLO");
       } else {
         setMessage(response.data.message);
       }

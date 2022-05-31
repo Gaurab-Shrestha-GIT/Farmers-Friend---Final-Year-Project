@@ -110,11 +110,12 @@ router.post("/customerlogin", (req, res) => {
         if (validHashedPassword) {
           return res.json({
             customerEmail: customerEmail,
-            message: "User successfully logged in",
+            customerLoggedIn: true,
           });
         } else {
           return res.json({
             customerLoggedIn: false,
+
             message: "Email or password incorrect",
           });
         }

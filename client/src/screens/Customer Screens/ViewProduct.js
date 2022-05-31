@@ -40,7 +40,7 @@ const ViewProduct = () => {
 
   useEffect(async () => {
     await axios
-      .get(`http://localhost:5000/viewproduct/${id}`)
+      .get(`https://farmersfriends.herokuapp.com/viewproduct/${id}`)
       .then((response) => {
         setProductDetails(response.data.result);
         setIsRating(response.data.rating);

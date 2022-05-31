@@ -17,14 +17,17 @@ const CustomerSignUp = () => {
   const navigate = useNavigate();
 
   const registerCustomer = async () => {
-    await Axios.post("http://localhost:5000/customer/registerCustomer", {
-      customerName: customerName,
-      customerAddress: customerAddress,
-      customerPhoneNumber: customerPhoneNumber,
-      customerEmail: customerEmail,
-      customerPassword: customerPassword,
-      customerPasswordConfirm: customerPasswordConfirm,
-    }).then((res) => {
+    await Axios.post(
+      "https://farmersfriends.herokuapp.com/customer/registerCustomer",
+      {
+        customerName: customerName,
+        customerAddress: customerAddress,
+        customerPhoneNumber: customerPhoneNumber,
+        customerEmail: customerEmail,
+        customerPassword: customerPassword,
+        customerPasswordConfirm: customerPasswordConfirm,
+      }
+    ).then((res) => {
       if (res.data.register) {
         setMessage(res.data.message);
       } else {

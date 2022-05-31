@@ -23,7 +23,6 @@ const HomeScreen = () => {
     <>
       <title>Welcome to Farmer's Friend</title>
       <Row className="m-2">
-        <h2>{product.length === 0 && <>NO Products</>}</h2>
         <Carousel>
           <Carousel.Item className="text-center">
             <img className="d-block w-100" src={picture66} alt="First slide" />
@@ -88,6 +87,7 @@ const HomeScreen = () => {
       </Row>
       <Row className="m-2">
         <h1 style={{ textTransform: "none" }}> Featured Products</h1>
+        <h2>{product.length === 0 && <>NO Products</>}</h2>
         {product.map((val) => (
           <Col key={val.id} sm={12} md={6} lg={4} xl={3}>
             <Card className="my-3 p-3 rounded text-center">
