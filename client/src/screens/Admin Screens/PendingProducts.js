@@ -15,11 +15,13 @@ const PendingProducts = () => {
   }, []);
 
   const approvedProduct = async (id) => {
-    await axios.put(
-      `https://farmersfriends.herokuapp.com/admin/pendingproducts/${id}`
-    );
-    alert("Product Successfully Approved!");
-    window.location.reload();
+    await axios
+      .put(`https://farmersfriends.herokuapp.com/admin/pendingproducts/${id}`)
+      .then((response) => {
+        alert("Product Successfully Approved!");
+        window.location.reload();
+      });
+
     // let approveProduct = confirm("Are you sure you want to approve?");
     // if (approveProduct === true) {
     //   alert("Product Successfully Approved");
@@ -34,6 +36,12 @@ const PendingProducts = () => {
     //   await axios.delete(`http://localhost:5000/admin/pendingproducts/${id}`);
     //   window.location.reload();
     // }
+    await axios
+      .delete(`http://localhost:5000/admin/pendingproducts/${id}`)
+      .then((response) => {
+        alert("Product Deleted");
+        window.location.reload();
+      });
   };
   return (
     <Container className="mt-4">
