@@ -136,7 +136,9 @@ const ViewProduct = () => {
                   <Row>
                     <Col>Price:</Col>
                     <Col>
-                      <strong>Rs. {productDetails[0].product_price}</strong>
+                      <strong>
+                        Rs. {qty * productDetails[0].product_price}
+                      </strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>
