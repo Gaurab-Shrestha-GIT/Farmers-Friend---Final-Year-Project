@@ -25,7 +25,7 @@ const FarmerOrders = () => {
   };
 
   return (
-    <Container className="">
+    <Container>
       <div>
         <nav aria-label="breadcrumb" className=" mt-2">
           <ol className="breadcrumb">

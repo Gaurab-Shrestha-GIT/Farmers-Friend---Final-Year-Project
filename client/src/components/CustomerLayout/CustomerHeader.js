@@ -54,6 +54,10 @@ const CustomerHeader = () => {
                       <i className="fas fa-user me-2"></i> Login as Customer
                     </NavDropdown.Item>
                   </NavDropdown>
+                  <Nav.Link href="/faq">
+                    <i class="fa-solid fa-question me-2"></i>
+                    FAQ
+                  </Nav.Link>
                 </>
               ) : (
                 <>

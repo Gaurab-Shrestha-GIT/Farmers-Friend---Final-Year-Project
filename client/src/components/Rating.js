@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * If the value is greater than or equal to the current star, then display a full star, otherwise if
+ * the value is greater than or equal to half of the current star, then display a half star, otherwise
+ * display an empty star.
+ * @returns A JSX element.
+ */
 const Rating = ({ value }) => {
   return (
     <div className="rating">

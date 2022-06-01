@@ -22,6 +22,7 @@ import SearchScreen from "./screens/Customer Screens/SearchScreen";
 import AdminLogin from "./screens/Admin Screens/AdminLogin";
 import PendingProducts from "./screens/Admin Screens/PendingProducts";
 import FarmerLogin from "./screens/Farmer Screens/FarmerLogin";
+import FAQ from "./screens/FAQ";
 
 const App = () => {
   const customerLoggedIn = localStorage.getItem("customerLoggedIn");
@@ -34,6 +35,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Customer />}>
                 <Route path="/" element={<Home />} />
+                <Route path="/faq" element={<FAQ />} />
                 <Route path="/farmersignup" element={<FarmerSignUp />} />
                 <Route path="/customersignup" element={<CustomerSignUp />} />
 
