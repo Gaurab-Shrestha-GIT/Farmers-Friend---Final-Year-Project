@@ -37,7 +37,9 @@ const PendingProducts = () => {
     //   window.location.reload();
     // }
     await axios
-      .delete(`http://localhost:5000/admin/pendingproducts/${id}`)
+      .delete(
+        `https://farmersfriends.herokuapp.com/admin/pendingproducts/${id}`
+      )
       .then((response) => {
         alert("Product Deleted");
         window.location.reload();
