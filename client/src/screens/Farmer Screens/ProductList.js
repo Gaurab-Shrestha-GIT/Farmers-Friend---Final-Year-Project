@@ -77,7 +77,7 @@ const ProductList = () => {
               <th>Product Name</th>
               <th>Price</th>
               <th>Image</th>
-              <th>Status</th>
+              <th>Approve Status</th>
               <th>Display</th>
               <th style={{ width: "260px" }}>Action</th>
             </tr>

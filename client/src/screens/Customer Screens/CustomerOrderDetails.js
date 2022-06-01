@@ -24,8 +24,8 @@ const CustomerOrderDetails = () => {
           <nav aria-label="breadcrumb" className=" mt-2">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="/farmerdashboard" style={{ textDecoration: "none" }}>
-                  Customer Dashboard
+                <a href="/customerprofile" style={{ textDecoration: "none" }}>
+                  Customer
                 </a>
               </li>
 
@@ -46,9 +46,10 @@ const CustomerOrderDetails = () => {
                 <th>Qty</th>
                 <th>Total Price</th>
                 <th>Image</th>
-                <th>Delivery</th>
+
                 <th>Farmer</th>
-                <th>Phone Number</th>
+                <th>Phn Number</th>
+                <th>Delivery</th>
               </tr>
             </thead>
             {productDetails.map((val) => {
@@ -69,9 +70,10 @@ const CustomerOrderDetails = () => {
                           height="100px"
                         />
                       </td>
-                      <td>{val.product_delivery}</td>
+
                       <td>{val.name}</td>
                       <td>{val.farmer_phone_number}</td>
+                      <td>{val.product_delivery}</td>
                     </tr>
                   </tbody>
                 </>

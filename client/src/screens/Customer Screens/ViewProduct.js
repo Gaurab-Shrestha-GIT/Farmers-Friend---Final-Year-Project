@@ -40,7 +40,7 @@ const ViewProduct = () => {
 
   useEffect(async () => {
     await axios
-      .get(`https://farmersfriends.herokuapp.com/viewproduct/${id}`)
+      .get(`https://farmersfriends.herokuapp.com/home/viewproduct/${id}`)
       .then((response) => {
         setProductDetails(response.data.result);
         setIsRating(response.data.rating);
@@ -79,6 +79,7 @@ const ViewProduct = () => {
   return (
     <>
       <title>Welcome to Farmer's Friend</title>
+
       <div className=" p-3">
         <Link className="btn btn-dark mt-3 " to="/">
           Back to Home

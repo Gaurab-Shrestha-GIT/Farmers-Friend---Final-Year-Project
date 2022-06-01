@@ -10,7 +10,7 @@ const CompareProduct = () => {
   const [productDetails, setProductDetails] = useState([]);
   useEffect(async () => {
     await axios
-      .get(`http://localhost:5000/compareproduct/${id}`)
+      .get(`https://farmersfriends.herokuapp.com/home/compareproduct/${id}`)
       .then((response) => {
         setProductDetails(response.data);
       });

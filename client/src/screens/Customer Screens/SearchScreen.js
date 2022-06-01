@@ -13,7 +13,7 @@ const SearchScreen = () => {
 
   useEffect(async () => {
     await axios
-      .get(`https://farmersfriends.herokuapp.com/find/${keyword}`)
+      .get(`https://farmersfriends.herokuapp.com/home/find/${keyword}`)
       .then((response) => {
         setProductDetails(response.data);
       });

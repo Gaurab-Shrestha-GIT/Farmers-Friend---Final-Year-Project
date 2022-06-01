@@ -15,6 +15,11 @@ const PendingProducts = () => {
   }, []);
 
   const approvedProduct = async (id) => {
+    await axios.put(
+      `https://farmersfriends.herokuapp.com/admin/pendingproducts/${id}`
+    );
+    alert("Product Successfully Approved!");
+    window.location.reload();
     // let approveProduct = confirm("Are you sure you want to approve?");
     // if (approveProduct === true) {
     //   alert("Product Successfully Approved");
@@ -86,6 +91,7 @@ const PendingProducts = () => {
                         title="Approve Button"
                         className="me-2"
                         variant="info"
+                        disabled={val.product_status === "approved"}
                         onClick={() => {
                           approvedProduct(val.id);
                         }}
@@ -96,6 +102,7 @@ const PendingProducts = () => {
                       <Button
                         title="Delete Button"
                         variant="danger"
+                        disabled={val.product_status === "approved"}
                         onClick={() => {
                           deleteProduct(val.id);
                         }}
