@@ -119,7 +119,7 @@ const HomeScreen = () => {
                   </div>
 
                   <div className="d-flex py-1">
-                    Price:
+                    Price/Kgs:
                     <Card.Text className="ms-3">
                       Rs.{val.product_price}
                     </Card.Text>
