@@ -86,7 +86,7 @@ const ProductList = () => {
             return (
               <>
                 <tbody>
-                  <tr key={val.id}>
+                  <tr>
                     <td>{val.product_name}</td>
                     <td>{val.product_price}</td>
                     <td>

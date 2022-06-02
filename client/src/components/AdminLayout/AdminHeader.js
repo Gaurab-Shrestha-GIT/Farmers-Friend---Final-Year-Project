@@ -12,7 +12,7 @@ const AdminHeader = () => {
     localStorage.removeItem("adminEmail");
     localStorage.removeItem("token");
     setAdminLoggedIn(false);
-    setAdminLoggedIn(false);
+
     navigate("/admindashboard/adminlogin");
   };
 

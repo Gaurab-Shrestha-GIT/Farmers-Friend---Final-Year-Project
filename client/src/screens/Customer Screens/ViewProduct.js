@@ -93,9 +93,8 @@ const ViewProduct = () => {
                 <p>Name: {productDetails[0].product_name}</p>
                 <p>Owned By: {productDetails[0].name}</p>
                 <p>Price/Kgs: Rs. {productDetails[0].product_price}</p>
-                <p>
-                  <Rating value={avgRating / productDetails.length} />
-                </p>
+
+                <Rating value={avgRating / productDetails.length} />
 
                 <p>{productDetails[0].product_description}</p>
               </ListGroup.Item>

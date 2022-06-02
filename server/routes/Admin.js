@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database/db");
 const jwt = require("jsonwebtoken");
+const isAuth = require("../middleware/authMiddleware");
 
 //login admin
 router.post("/adminlogin", (req, res) => {
@@ -49,7 +50,7 @@ router.post("/adminlogin", (req, res) => {
 });
 
 //get all customers details
-router.get("/customerdetails", (req, res) => {
+router.get("/customerdetails", isAuth, (req, res) => {
   db.query(
     "SELECT * FROM customer_details",
 
@@ -63,7 +64,7 @@ router.get("/customerdetails", (req, res) => {
 });
 
 //get all farmers details
-router.get("/farmerdetails", (req, res) => {
+router.get("/farmerdetails", isAuth, (req, res) => {
   db.query(
     "SELECT * FROM farmer_details",
 
@@ -77,7 +78,7 @@ router.get("/farmerdetails", (req, res) => {
 });
 
 //get all pending products
-router.get("/pendingproducts", (req, res) => {
+router.get("/pendingproducts", isAuth, (req, res) => {
   db.query(
     "SELECT *  FROM add_product p JOIN farmer_details f ON p.farmer_email = f.farmer_email",
 

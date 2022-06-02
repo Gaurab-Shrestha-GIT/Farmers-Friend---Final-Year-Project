@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button, Container } from "react-bootstrap";
 import FormContainer from "../../components/FormContainer";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CustomerProfile = () => {
   const [customerDetails, setCustomerDetails] = useState([]);
@@ -13,7 +14,12 @@ const CustomerProfile = () => {
 
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
+
   useEffect(async () => {
+    // if (!localStorage.getItem("token")) {
+    //   navigate("/customerlogin");
+    // }
     await Axios.post(
       "https://farmersfriends.herokuapp.com/customer/customerprofile",
       {

@@ -20,6 +20,7 @@ const FarmersDetails = () => {
     if (!localStorage.getItem("token")) {
       navigate("/admindashboard/adminlogin");
     }
+
     await axios
       .get("https://farmersfriends.herokuapp.com/admin/farmerdetails", {
         headers: {

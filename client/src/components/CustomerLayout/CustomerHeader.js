@@ -11,6 +11,7 @@ const CustomerHeader = () => {
   const logout = () => {
     localStorage.removeItem("customerLoggedIn");
     localStorage.removeItem("customerEmail");
+    localStorage.removeItem("token");
 
     setCustomerLoggedIn(false);
     navigate("/");
@@ -55,7 +56,7 @@ const CustomerHeader = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="/faq">
-                    <i class="fa-solid fa-question me-2"></i>
+                    <i className="fa-solid fa-question me-2"></i>
                     FAQ
                   </Nav.Link>
                 </>

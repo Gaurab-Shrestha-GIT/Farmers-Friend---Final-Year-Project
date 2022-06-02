@@ -14,11 +14,11 @@ const FAQ = () => {
 
         <Row className="mt-3">
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingOne">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseOne"
@@ -30,11 +30,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseOne"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     Fill out the form by clicking the "Join As Farmer" option at
                     the top of the page.
                   </div>
@@ -43,11 +43,11 @@ const FAQ = () => {
             </div>
           </Col>
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingTwo">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo"
@@ -59,11 +59,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseTwo"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingTwo"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     On the home page, click on the product you wish, and you'll
                     be taken to the product screen, where you can buy it by
                     clicking the "BUY" button, but you must be logged in as
@@ -76,11 +76,11 @@ const FAQ = () => {
         </Row>
         <Row className="mt-5">
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingThree">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseThree"
@@ -92,11 +92,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseThree"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingThree"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     After logging into your customer account, select the
                     "Orders" link at the top to see your products.
                   </div>
@@ -105,11 +105,11 @@ const FAQ = () => {
             </div>
           </Col>
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingFour">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseFour"
@@ -121,11 +121,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseFour"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingFour"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     You must register as a farmer in order to sell your product.
                     After you've registered as a farmer, you can log in and add
                     products using the "Add Product" form.
@@ -137,11 +137,11 @@ const FAQ = () => {
         </Row>
         <Row className="mt-5">
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingFive">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseFive"
@@ -153,11 +153,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseFive"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingFive"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     After you've logged in to your farmer's account, go to the
                     "Product List" tab to see all of the products you've added.
                   </div>
@@ -166,11 +166,11 @@ const FAQ = () => {
             </div>
           </Col>
           <Col>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
+            <div className="accordion" id="accordionExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="headingSix">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseSix"
@@ -182,11 +182,11 @@ const FAQ = () => {
                 </h2>
                 <div
                   id="collapseSix"
-                  class="accordion-collapse collapse hide"
+                  className="accordion-collapse collapse hide"
                   aria-labelledby="headingSix"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     You can contact the farmer through their phone number after
                     placing the order the product and request delivery, or
                     customers can go to the farmer's field and get fresh

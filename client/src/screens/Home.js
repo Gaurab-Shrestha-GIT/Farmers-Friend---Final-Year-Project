@@ -15,6 +15,7 @@ const HomeScreen = () => {
     await axios
       .get(`https://farmersfriends.herokuapp.com/home/allproducts`)
       .then((response) => {
+        console.log(response);
         setProduct(response.data);
       });
   }, []);

@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require("../database/db");
 const bcrypt = require("bcryptjs");
 const moment = require("moment");
+// const jwt = require("jsonwebtoken");
+// const isAuth = require("../middleware/authMiddleware");
 
 //register customer here
 router.post("/registerCustomer", (req, res) => {
@@ -108,20 +110,33 @@ router.post("/customerlogin", (req, res) => {
         );
 
         if (validHashedPassword) {
+          // const token = jwt.sign({ customerEmail }, "farmers friend", {
+          //   expiresIn: 500,
+          // });
+
+          // // const token = jwt.sign({ customerEmail }, "farmers friend", {
+          // //   expiresIn: 300,
+          // // });
+          // console.log(token);
+
           return res.json({
+            // auth: true,
+            // token: token,
+            // result: result,
             customerEmail: customerEmail,
             customerLoggedIn: true,
           });
         } else {
           return res.json({
             customerLoggedIn: false,
-
+            // auth: false,
             message: "Email or password incorrect",
           });
         }
       } else {
         return res.json({
           customerLoggedIn: false,
+          // auth: false,
           message: "User do not exist",
         });
       }

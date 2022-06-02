@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Button, Table } from "react-bootstrap";
 import { Image } from "cloudinary-react";
+import { useNavigate } from "react-router-dom";
 
 const CustomerOrderDetails = () => {
   const [productDetails, setProductDetails] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(async () => {
     await axios
       .post("https://farmersfriends.herokuapp.com/customer/customerorders", {
@@ -12,7 +15,6 @@ const CustomerOrderDetails = () => {
       })
       .then((response) => {
         setProductDetails(response.data);
-        console.log(response.data);
       });
   }, []);
 
@@ -56,7 +58,7 @@ const CustomerOrderDetails = () => {
               return (
                 <>
                   <tbody>
-                    <tr>
+                    <tr key={val.id}>
                       <td>{val.product_name}</td>
                       <td>{val.product_price}</td>
                       <td>{val.product_qty}</td>

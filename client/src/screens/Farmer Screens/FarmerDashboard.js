@@ -52,7 +52,7 @@ const FarmerDashboard = () => {
         <Row>
           {farmerDetails.map((val) => (
             <>
-              <Col md={4} key={val.id}>
+              <Col md={4}>
                 <div className="mb-4">
                   <div className="card-body text-center">
                     <Avatar facebookId="100008343750912" size="350" />
