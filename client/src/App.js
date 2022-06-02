@@ -25,8 +25,6 @@ import FarmerLogin from "./screens/Farmer Screens/FarmerLogin";
 import FAQ from "./screens/FAQ";
 
 const App = () => {
-  const customerLoggedIn = localStorage.getItem("customerLoggedIn");
-
   return (
     <>
       <main>

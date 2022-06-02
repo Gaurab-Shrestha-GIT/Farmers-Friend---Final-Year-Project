@@ -30,12 +30,14 @@ router.post("/adminlogin", (req, res) => {
           });
         } else {
           return res.json({
+            auth: false,
             adminLoggedIn: false,
             message: "Email or password incorrect",
           });
         }
       } else {
         return res.json({
+          auth: false,
           adminLoggedIn: false,
           message: "User do not exist",
         });

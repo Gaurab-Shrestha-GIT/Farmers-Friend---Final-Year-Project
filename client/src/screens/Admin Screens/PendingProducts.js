@@ -2,13 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Button, Table } from "react-bootstrap";
 import { Image } from "cloudinary-react";
+import { useNavigate } from "react-router-dom";
 
 const PendingProducts = () => {
   const [pendingProducts, setPendingProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(async () => {
+    if (!localStorage.getItem("token")) {
+      navigate("/admindashboard/adminlogin");
+    }
     await axios
-      .get("https://farmersfriends.herokuapp.com/admin/pendingproducts")
+      .get("https://farmersfriends.herokuapp.com/admin/pendingproducts", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      })
       .then((response) => {
         setPendingProducts(response.data);
       });

@@ -10,6 +10,8 @@ const AdminHeader = () => {
   const logout = () => {
     localStorage.removeItem("adminLoggedIn");
     localStorage.removeItem("adminEmail");
+    localStorage.removeItem("token");
+    setAdminLoggedIn(false);
     setAdminLoggedIn(false);
     navigate("/admindashboard/adminlogin");
   };

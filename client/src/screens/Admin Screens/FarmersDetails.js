@@ -9,14 +9,23 @@ import {
   Table,
 } from "react-bootstrap";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const FarmersDetails = () => {
   const [farmerDetails, setFarmerDetails] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(async () => {
+    if (!localStorage.getItem("token")) {
+      navigate("/admindashboard/adminlogin");
+    }
     await axios
-      .get("https://farmersfriends.herokuapp.com/admin/farmerdetails")
+      .get("https://farmersfriends.herokuapp.com/admin/farmerdetails", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      })
       .then((response) => {
         setFarmerDetails(response.data);
       });

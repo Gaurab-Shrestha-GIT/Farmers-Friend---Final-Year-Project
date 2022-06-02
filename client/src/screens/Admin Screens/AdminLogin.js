@@ -23,6 +23,7 @@ const AdminLogin = () => {
       } else {
         localStorage.setItem("adminLoggedIn", true);
         localStorage.setItem("adminEmail", response.data.adminEmail);
+        localStorage.setItem("token", response.data.token);
         navigate("/admindashboard/pendingproducts");
       }
     });

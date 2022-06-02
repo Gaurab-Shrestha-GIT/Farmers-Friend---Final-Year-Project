@@ -6,31 +6,27 @@ const jwt = require("jsonwebtoken");
  * to authenticate". If the token is verified, set the userEmail to the decoded email and call the next
  * function.
  */
-// const auth = (req, res) => {
-//   /* Getting the token from the header. */
-//   const token = req.headers["x-access-token"];
+const isAuth = (req, res, next) => {
+  /* Getting the token from the header. */
+  const token = req.headers["x-access-token"];
 
-//   if (!token) {
-//     res.json({
-//       auth: false,
-//       message: "No Token",
-//     });
-//   } else {
-//     jwt.verify(token, "farmers friend", (error) => {
-//       if (error) {
-//         res.json({
-//           auth: false,
-//           message: "Not Authenticated",
-//         });
-//       } else {
-//         res.json({
-//           auth: true,
-//           message: "Authenticated",
-//         });
-//         next();
-//       }
-//     });
-//   }
-// };
+  if (!token) {
+    res.json({
+      auth: false,
+      message: "No Token",
+    });
+  } else {
+    jwt.verify(token, "farmers friend", (error) => {
+      if (error) {
+        res.json({
+          auth: false,
+          message: "Not Authenticated",
+        });
+      } else {
+        next();
+      }
+    });
+  }
+};
 
-module.exports = auth;
+module.exports = isAuth;

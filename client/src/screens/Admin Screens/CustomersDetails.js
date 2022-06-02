@@ -10,12 +10,22 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
+import { useNavigate } from "react-router-dom";
+
 const CustomersDetails = () => {
   const [customerDetails, setCustomerDetails] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(async () => {
+    if (!localStorage.getItem("token")) {
+      navigate("/admindashboard/adminlogin");
+    }
     await axios
-      .get("https://farmersfriends.herokuapp.com/admin/customerdetails")
+      .get("https://farmersfriends.herokuapp.com/admin/customerdetails", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      })
       .then((response) => {
         setCustomerDetails(response.data);
       });
