@@ -27,6 +27,16 @@ const FarmerLogin = () => {
       } else {
         setMessage(response.data.message);
       }
+
+      // if (!response.data.farmerLoggedIn) {
+      //   setMessage(response.data.message);
+      // } else {
+      //   localStorage.setItem("farmerLoggedIn", true);
+      //   localStorage.setItem("farmerEmail", response.data.farmerEmail);
+      //   // localStorage.setItem("token", response.data.token);
+      //   navigate("/farmerdashboard");
+      //   // console.log(response.data.token);
+      // }
     });
   };
 

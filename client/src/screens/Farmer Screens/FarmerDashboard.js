@@ -26,6 +26,7 @@ const FarmerDashboard = () => {
       setName(response.data[0].name);
       setAddress(response.data[0].address);
       setPhoneNumber(response.data[0].farmer_phone_number);
+      console.log(response);
     });
   }, []);
 

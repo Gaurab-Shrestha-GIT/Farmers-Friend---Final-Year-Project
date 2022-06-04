@@ -20,16 +20,11 @@ const CustomerLogin = () => {
         password: password,
       }
     ).then((response) => {
-      // console.log(response.data.token);
 
-      // localStorage.setItem("token", response.data.token);
-      // localStorage.setItem("customerLoggedIn", true);
-      // localStorage.setItem("customerEmail", response.data.customerEmail);
-      // navigate("/hello");
+
       if (response.data.customerLoggedIn) {
         localStorage.setItem("customerLoggedIn", true);
         localStorage.setItem("customerEmail", response.data.customerEmail);
-        // localStorage.setItem("token", response.data.token);
         navigate("/");
       } else {
         setMessage(response.data.message);

@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require("../database/db");
 const bcrypt = require("bcryptjs");
 const multer = require("multer");
+const jwt = require("jsonwebtoken");
+const isAuth = require("../middleware/authMiddleware");
 
 var storage = multer.diskStorage({
   destination: (req, res, cb) => {
