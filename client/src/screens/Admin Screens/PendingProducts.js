@@ -69,7 +69,7 @@ const PendingProducts = () => {
             </li>
 
             <li className="breadcrumb-item active" aria-current="page">
-              Pending Products
+              Products
             </li>
           </ol>
         </nav>

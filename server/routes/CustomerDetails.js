@@ -90,7 +90,7 @@ router.post("/customerlogin", (req, res) => {
 
   if (customerEmail.trim() == "" || password.trim() == "") {
     return res.json({
-      register: false,
+      customerLoggedIn: false,
       message: "Please fill all the fields!",
     });
   }
@@ -240,35 +240,6 @@ router.post("/:id/reviews", (req, res) => {
     }
   );
 });
-
-// place order page route
-// router.post("/placeorder", (req, res) => {
-//   const orders = req.body.orders;
-//   console.log(orders);
-//   console.log(orders.length);
-//   console.log(orders[0].order_id);
-//   let sql = "";
-
-//   //final
-//   orders.map((order) => {
-//     sql =
-//       sql +
-//       `INSERT INTO cust_orders VALUES ('${order.order_id}', ${order.product_id},'${order.farmer_email}', '${order.customer_email}', ${order.order_qty}),`;
-//   });
-//   // orders.map((order) => {
-//   //   sql =
-//   //     `INSERT INTO cust_orders (order_id, product_id, farmer_email, customer_email, qty) VALUES ('${order.order_id}', ${order.product_id},'${order.farmer_email}', '${order.customer_email}', '${order.order_qty}') ` +
-//   //     sql;
-//   // });
-
-//   db.query(sql, (error, result) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       res.send(result);
-//     }
-//   });
-// });
 
 router.post("/placeorder/:id", (req, res) => {
   const productId = req.params.id;

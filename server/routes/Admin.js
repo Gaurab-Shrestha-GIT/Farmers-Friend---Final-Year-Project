@@ -77,7 +77,7 @@ router.get("/farmerdetails", isAuth, (req, res) => {
   );
 });
 
-//get all pending products
+//get all pending pendingproducts
 router.get("/pendingproducts", isAuth, (req, res) => {
   db.query(
     "SELECT *  FROM add_product p JOIN farmer_details f ON p.farmer_email = f.farmer_email",

@@ -16,21 +16,6 @@ router.get("/allproducts", (req, res) => {
   );
 });
 
-//get product details for add to cart
-router.get("/products/:id", (req, res) => {
-  const id = req.params.id;
-  db.query(
-    "SELECT p.id, p.product_name, p.product_price, p.product_description, p.product_image, p.farmer_email, f.name FROM add_product p JOIN farmer_details f on p.farmer_email=f.farmer_email WHERE id = ?",
-    [id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      res.send(result);
-    }
-  );
-});
-
 //get individual product details with rating and review
 router.get("/viewproduct/:id", (req, res) => {
   const id = req.params.id;
